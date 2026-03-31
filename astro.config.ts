@@ -23,6 +23,8 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
+  site: 'https://plazzacityscr.github.io/astro-temp',
+  base: '/astro-temp',
 
   integrations: [
     tailwind({
