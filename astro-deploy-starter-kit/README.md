@@ -86,13 +86,13 @@ astro-deploy-starter-kit/
 
 ## 🎯 Características
 
-| Característica | Descripción |
-|----------------|-------------|
-| **Agnóstico** | Funciona con cualquier plantilla Astro |
-| **Automático** | Deploy con cada push a `main` |
-| **Detecta automáticamente** | Package manager, config files, estructura |
-| **Interactivo** | Solicita información al usuario paso a paso |
-| **Documentado** | Incluye guías completas en `_doc/` |
+| Característica              | Descripción                                 |
+| --------------------------- | ------------------------------------------- |
+| **Agnóstico**               | Funciona con cualquier plantilla Astro      |
+| **Automático**              | Deploy con cada push a `main`               |
+| **Detecta automáticamente** | Package manager, config files, estructura   |
+| **Interactivo**             | Solicita información al usuario paso a paso |
+| **Documentado**             | Incluye guías completas en `_doc/`          |
 
 ---
 
@@ -201,10 +201,10 @@ Verifica que el build funciona.
 
 ## 📚 Documentación
 
-| Archivo | Descripción |
-|---------|-------------|
-| [`_doc/ASTRO_SKILL_PROMPT.md`](_doc/ASTRO_SKILL_PROMPT.md) | Guía para usar la skill astro-docs |
-| [`_doc/DEPLOY_AGENT.md`](_doc/DEPLOY_AGENT.md) | Documentación del agente de despliegue |
+| Archivo                                                    | Descripción                            |
+| ---------------------------------------------------------- | -------------------------------------- |
+| [`_doc/ASTRO_SKILL_PROMPT.md`](_doc/ASTRO_SKILL_PROMPT.md) | Guía para usar la skill astro-docs     |
+| [`_doc/DEPLOY_AGENT.md`](_doc/DEPLOY_AGENT.md)             | Documentación del agente de despliegue |
 | [`_doc/STARTER_KIT_README.md`](_doc/STARTER_KIT_README.md) | Documentación completa del starter kit |
 
 ---
@@ -218,7 +218,7 @@ Verifica que `astro.config.*` tenga:
 ```javascript
 export default defineConfig({
   site: 'https://{owner}.github.io/{repo}',
-  base: '/{repo}',  // ← Debe coincidir con el nombre del repo
+  base: '/{repo}', // ← Debe coincidir con el nombre del repo
 });
 ```
 
@@ -293,4 +293,4 @@ MIT - Ver [LICENSE](LICENSE) para más detalles.
 
 ---
 
-*Última actualización: 2026-03-28*
+_Última actualización: 2026-03-28_

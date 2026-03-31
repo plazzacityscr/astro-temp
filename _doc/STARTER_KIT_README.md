@@ -93,6 +93,7 @@ cd /tu/proyecto/
 ### Paso 1: Información del Proyecto
 
 El script solicita:
+
 - URL de la plantilla Astro (ej: `https://github.com/arthelokyo/astrowind`)
 - Owner de tu repositorio GitHub
 - Nombre de tu repositorio
@@ -107,14 +108,17 @@ El script solicita:
 ### Paso 3: Configurando GitHub Pages
 
 **Detección automática**:
+
 - Busca `astro.config.mjs`, `astro.config.ts`, o `astro.config.js`
 - Busca `src/config.yaml` o `src/config.yml`
 
 **Configuración automática**:
+
 - Agrega/modifica `site` y `base` en `astro.config.*`
 - Actualiza `config.yaml` si existe
 
 **Fallback manual**:
+
 - Si no detecta los archivos, muestra instrucciones manuales
 
 ### Paso 4: Configurando Agente de Despliegue
@@ -126,6 +130,7 @@ El script solicita:
 ### Paso 5: Instalando Dependencias
 
 **Detección automática del package manager**:
+
 - `pnpm-lock.yaml` → `pnpm install`
 - `yarn.lock` → `yarn install`
 - `bun.lockb` → `bun install`
@@ -140,6 +145,7 @@ El script solicita:
 ### Paso 7: Configurando Astro-Docs Skill
 
 **Intenta en este orden**:
+
 1. Verifica si ya está instalada en `~/.qwen/skills/astro-docs/`
 2. Intenta copiar desde `.skills/astro-docs-skill/` local
 3. Intenta clonar desde GitHub
@@ -191,6 +197,7 @@ log_error "Error ocurrido"
 ### Modificar el Workflow
 
 Edita `.github/workflows/deploy.yml` para:
+
 - Cambiar la versión de Node.js
 - Agregar pasos personalizados
 - Modificar el directorio de build
@@ -198,6 +205,7 @@ Edita `.github/workflows/deploy.yml` para:
 ### Modificar el Agente
 
 Edita `.github/workflows/deploy-agent.sh` para:
+
 - Cambiar los mensajes
 - Agregar comandos personalizados
 - Modificar la lógica de detección
@@ -210,11 +218,11 @@ Agrega scripts al directorio `scripts/` y llámalos desde `init.sh`.
 
 ## 📚 Documentación Incluida
 
-| Archivo | Propósito |
-|---------|-----------|
-| `_doc/ASTRO_SKILL_PROMPT.md` | Guía para usar la skill astro-docs |
-| `_doc/DEPLOY_AGENT.md` | Documentación del agente de despliegue |
-| `_doc/STARTER_KIT_README.md` | Este archivo |
+| Archivo                      | Propósito                              |
+| ---------------------------- | -------------------------------------- |
+| `_doc/ASTRO_SKILL_PROMPT.md` | Guía para usar la skill astro-docs     |
+| `_doc/DEPLOY_AGENT.md`       | Documentación del agente de despliegue |
+| `_doc/STARTER_KIT_README.md` | Este archivo                           |
 
 ---
 
@@ -223,6 +231,7 @@ Agrega scripts al directorio `scripts/` y llámalos desde `init.sh`.
 ### ¿Funciona con cualquier plantilla Astro?
 
 Sí, el kit es agnóstico. Detecta automáticamente:
+
 - El archivo de configuración de Astro
 - El package manager usado
 - La estructura de carpetas
@@ -234,6 +243,7 @@ El kit configura directamente `astro.config.*`. `config.yaml` es opcional.
 ### ¿Puedo usar este kit en un proyecto existente?
 
 Sí, pero ten cuidado:
+
 - El script puede sobrescribir archivos existentes
 - Revisa los cambios antes de hacer commit
 - Haz backup primero
@@ -245,6 +255,7 @@ Sí, cada push a `main` dispara el workflow automáticamente.
 ### ¿Funciona en Windows?
 
 El kit está diseñado para Linux/Mac (bash). Para Windows:
+
 - Usa WSL (Windows Subsystem for Linux)
 - O adapta los scripts a PowerShell
 
@@ -264,4 +275,4 @@ El kit está diseñado para Linux/Mac (bash). Para Windows:
 
 ---
 
-*Última actualización: 2026-03-28*
+_Última actualización: 2026-03-28_

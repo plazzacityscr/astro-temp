@@ -8,12 +8,12 @@ Automatizar y monitorear el despliegue de cualquier proyecto Astro a GitHub Page
 
 ## 📁 Archivos Clave
 
-| Archivo | Propósito |
-|---------|-----------|
-| `.github/workflows/deploy-agent.sh` | Script informativo del agente |
-| `.github/workflows/deploy.yml` | Workflow automático de GitHub Actions |
-| `astro.config.*` | Configuración de Astro (site + base) |
-| `_doc/DEPLOY_AGENT.md` | Esta documentación |
+| Archivo                             | Propósito                             |
+| ----------------------------------- | ------------------------------------- |
+| `.github/workflows/deploy-agent.sh` | Script informativo del agente         |
+| `.github/workflows/deploy.yml`      | Workflow automático de GitHub Actions |
+| `astro.config.*`                    | Configuración de Astro (site + base)  |
+| `_doc/DEPLOY_AGENT.md`              | Esta documentación                    |
 
 ---
 
@@ -95,7 +95,7 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://{owner}.github.io/{repo}',
-  base: '/{repo}',  // ⚠️ Debe coincidir con el nombre del repo
+  base: '/{repo}', // ⚠️ Debe coincidir con el nombre del repo
   // ... resto de configuración
 });
 ```
@@ -107,8 +107,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]  # Se ejecuta con cada push a main
-  workflow_dispatch:  # Permite trigger manual (no funciona en Codespaces)
+    branches: [main] # Se ejecuta con cada push a main
+  workflow_dispatch: # Permite trigger manual (no funciona en Codespaces)
 
 # ... resto de configuración (ver deploy.yml template)
 ```
@@ -124,11 +124,12 @@ on:
 **Causa**: `base` en `astro.config.*` no coincide con el nombre del repositorio.
 
 **Solución**:
+
 ```javascript
 // astro.config.mjs
 export default defineConfig({
   site: 'https://{owner}.github.io/{repo}',
-  base: '/{repo}'  // ← Debe ser /<nombre-del-repo>
+  base: '/{repo}', // ← Debe ser /<nombre-del-repo>
 });
 ```
 
@@ -145,6 +146,7 @@ export default defineConfig({
 **Síntoma**: El workflow marca ❌ en el paso de build.
 
 **Pasos**:
+
 1. Revisa los logs en: `https://github.com/{owner}/{repo}/actions`
 2. Ejecuta `npm run build` (o `pnpm build`, `yarn build`) localmente para reproducir el error
 3. Corrige el error
@@ -153,10 +155,12 @@ export default defineConfig({
 ### Página 404 después del deploy
 
 **Causas posibles**:
+
 1. El workflow aún no terminó (espera 2-5 min)
 2. GitHub Pages no está configurado correctamente
 
 **Verificación**:
+
 1. Ve a: `https://github.com/{owner}/{repo}/settings/pages`
 2. En **Build and deployment**:
    - **Source**: Debe decir "GitHub Actions"
@@ -262,12 +266,12 @@ gh repo view {owner}/{repo} --web
 
 ### URLs del Proyecto
 
-| Descripción | URL |
-|-------------|-----|
-| Repositorio | `https://github.com/{owner}/{repo}` |
-| Actions | `https://github.com/{owner}/{repo}/actions` |
-| Settings | `https://github.com/{owner}/{repo}/settings` |
-| Sitio Desplegado | `https://{owner}.github.io/{repo}/` |
+| Descripción      | URL                                          |
+| ---------------- | -------------------------------------------- |
+| Repositorio      | `https://github.com/{owner}/{repo}`          |
+| Actions          | `https://github.com/{owner}/{repo}/actions`  |
+| Settings         | `https://github.com/{owner}/{repo}/settings` |
+| Sitio Desplegado | `https://{owner}.github.io/{repo}/`          |
 
 ---
 
@@ -283,4 +287,4 @@ gh repo view {owner}/{repo} --web
 
 ---
 
-*Última actualización: 2026-03-28*
+_Última actualización: 2026-03-28_
