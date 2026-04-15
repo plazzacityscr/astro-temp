@@ -474,18 +474,6 @@ Texto literal:
 
 ### 7. Archivos Sensibles en Repositorio CRÍTICO
 
-**Severidad:** MEDIA
-
-- Directorio `/temp/` contiene:
-  - `key` (llave SSH?)
-  - `key.ppk` (llave privada PuTTY?)
-
-**Recomendación URGENTE:** 
-- Eliminar claves privadas del repositorio
-- Añadir a `.gitignore`
-- Revocar claves expuestas
-- Usar secretos de GitHub Actions
-
 ### 8. Documentación Interna Mínima
 
 **Severidad:** BAJA
